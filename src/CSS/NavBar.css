@@ -1,0 +1,18 @@
+.NavBar li {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.NavBar a {
+  display: block;
+  background: #438bbd;
+  border-radius: 3px;
+  padding: 5px;
+  color: #fff;
+}
+
+.NavBar .active,
+.NavBar a:hover,
+.SearchBar button:hover {
+  background-color: #275270;
+}
