@@ -13,16 +13,18 @@ class Gallery extends Component {
 		this.state = {
 			photos: []
 		};
+		this.getPhotos = this.getPhotos.bind(this);
 	}
 
 	componentDidMount() {
 		this.getPhotos();
 	}
 
-	getPhotos() {
+	getPhotos(query) {
+		console.log(this.state.photos);
 		let res = axios
 			.get(
-				`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${this.props.match.params.id}&per_page=24&format=json&nojsoncallback=1`
+				`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`
 			)
 			.then(response =>
 				this.setState({
@@ -52,7 +54,7 @@ class Gallery extends Component {
 		return (
 			<div className='Gallery'>
 				<div className='Gallery-search'>
-					<SearchBar />
+					<SearchBar getPhotos={this.getPhotos} />
 				</div>
 				<div className='Gallery-nav'>
 					<NavBar />

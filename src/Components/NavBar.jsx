@@ -13,8 +13,8 @@ class NavBar extends Component {
 			<div className='NavBar'>
 				<h1>Flikr Search App</h1>
 				<ul>
-					<NavLink to='/trees'>List Item 1</NavLink>
-					<NavLink to='/bears'>List Item 2</NavLink>
+					<NavLink to='/trees'>Pictures of Trees</NavLink>
+					<NavLink to='/bears'>Pictures of Bears</NavLink>
 				</ul>
 			</div>
 		);

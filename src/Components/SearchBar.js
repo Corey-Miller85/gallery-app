@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router";
 import "../CSS/SearchBar.css";
 
 class SearchBar extends Component {
@@ -13,9 +14,8 @@ class SearchBar extends Component {
 
 	handleSearch(evt) {
 		evt.preventDefault();
-		let searchValue = this.state.searchValue;
-		let url = `/${searchValue}`;
-		this.props.history.push(url);
+		this.props.getPhotos(this.state.searchValue);
+		this.props.history.push(`/${this.state.searchValue}`);
 	}
 
 	handleChange(evt) {
@@ -47,4 +47,4 @@ class SearchBar extends Component {
 	}
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
