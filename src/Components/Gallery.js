@@ -17,12 +17,12 @@ class Gallery extends Component {
 	}
 
 	componentDidMount() {
-		this.getPhotos();
+		this.getPhotos(this.props.match.params.id);
 	}
 
 	getPhotos(query) {
 		console.log(this.state.photos);
-		let res = axios
+		axios
 			.get(
 				`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`
 			)
